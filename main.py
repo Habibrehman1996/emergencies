@@ -6,10 +6,9 @@ import tempfile
 from io import BytesIO
 
 # Title of the app
-st.title('Emergency Help - Voice Assisted')
-
+st.title('HOPEHUB')
 # Introduction to the app
-st.write("""
+st.subheader("""
     This app provides emergency guidance for both medical and non-medical situations.
     Select an emergency type by clicking a button or using your voice.
 """)
@@ -43,7 +42,7 @@ medical_emergency_data = {
 - Continue to monitor the person’s condition until emergency responders arrive.
 - If the person becomes unconscious, continue CPR until help arrives or the person shows signs of recovery.
         """,
-        "image": "https://example.com/images/heart_attack.jpg"  # Replace with actual URL
+        "image": "https://www.ckbhospital.com/wp-content/uploads/2022/05/First-Aid-during-heart-attack-CPR-Guide-step-by-step-1024x576.jpg"  # Replace with actual URL
     },
     "stroke": {
         "description": """
@@ -69,7 +68,8 @@ medical_emergency_data = {
 - Monitor the person’s condition until emergency responders arrive.
 - If the person becomes unconscious, continue CPR until help arrives or the person shows signs of recovery.
         """,
-        "image": "https://example.com/images/stroke.jpg"  # Replace with actual URL
+        "image": "https://i.pinimg.com/originals/4b/84/15/4b8415035a3dbde9081cf58bca11a3ba.jpg"  # Replace with actual URL
+    },
  "severe bleeding": {
         "description": """
 *Recognizing Severe Bleeding:*
@@ -95,7 +95,7 @@ medical_emergency_data = {
 - Continue applying pressure until help arrives.
 - Monitor the person’s vital signs and consciousness level.
         """,
-        "image": "images/severe_bleeding.jpg"
+        "image": "https://www.cleveland.com/resizer/v2/https%3A%2F%2Fadvancelocal-adapter-image-uploads.s3.amazonaws.com%2Fexpo.advance.net%2Fimg%2F85e8de8fc8%2Fwidth2048%2Fc52_stopthebleedposter57e2de68c2f1d.jpeg?auth=7ff23b78bfa1dc870ce9a492b96195481e811f885284fd33a3f7475b32404b88&width=1280&quality=90"
     },
     "breathing issues": {
         "description": """
@@ -122,7 +122,7 @@ medical_emergency_data = {
 *Aftercare:*
 - Continue monitoring the person’s breathing and responsiveness until help arrives.
         """,
-        "image": "images/breathing_issues.jpg"
+        "image": "https://cdn.medizzy.com/RTukU1lxpCGgaQAHVISDYaDArs8=/680x680/img/posts/dfc3ede7-ffee-47e3-83ed-e7ffeeb7e3bb"
     },
     "shock": {
         "description": """
@@ -152,7 +152,7 @@ medical_emergency_data = {
 - Continue monitoring the person’s condition until emergency responders arrive.
 - If the person becomes unconscious, ensure they are breathing and begin CPR if necessary.
         """,
-        "image": "images/shock.jpg"
+        "image": "https://hsseworld.com/wp-content/uploads/2021/03/Electrical-Shock-Survival.png"
     },
     "burns": {
         "description": """
@@ -183,7 +183,7 @@ medical_emergency_data = {
 - Keep the burn clean and dry.
 - Seek professional medical care for burns covering large areas or involving critical parts of the body.
         """,
-        "image": "images/burns.jpg"
+        "image": "https://img.freepik.com/premium-vector/skin-burn-stages-infographics-treatment-thermal-burns-types-burning-hands-medical-care-safety-fire-body-skin-first-aid-injury-recent-vector-poster_543062-5541.jpg?w=740"
     },
     "fractures": {
         "description": """
@@ -213,82 +213,10 @@ medical_emergency_data = {
 - Keep the person warm and monitor their condition until help arrives.
 - Avoid giving food or drink if surgery is needed.
         """,
-        "image": "images/fractures.jpg"
+        "image": "https://c8.alamy.com/comp/HYR6XY/green-background-vector-illustration-of-a-leg-bandage-HYR6XY.jpg"
     },
-    "head injury": {
-        "description": """
-*Recognizing a Head Injury:*
-- Loss of consciousness, even briefly.
-- Dizziness, confusion, or disorientation.
-- Headache, nausea, or vomiting.
-- Blurred vision or ringing in the ears.
-- Slurred speech or difficulty speaking.
-- Uneven pupil size or difficulty maintaining balance.
-
-*What to Do:*
-1. *Call Emergency Services Immediately for Severe Head Injuries:*
-   - Especially if the person is unconscious, has severe bleeding, or shows signs of a concussion.
-2. *Do Not Move the Person if a Spinal Injury is Suspected:*
-   - Keep the head, neck, and spine aligned and immobile.
-3. *Monitor the Person’s Vital Signs:*
-   - Check for breathing, pulse, and level of consciousness.
-4. *Apply a Cold Pack to Reduce Swelling:*
-   - Place ice wrapped in a cloth on the injured area for 15-20 minutes.
-5. *Keep the Person Still and Calm:*
-   - Limit movement to prevent further injury.
-6. *Do Not Give Food or Drink:*
-   - Avoid potential complications if surgery is required.
-7. *If the Person is Vomiting or Unconscious, Place Them in the Recovery Position:*
-   - This helps keep the airway clear and reduces the risk of choking.
-
-*Aftercare:*
-- Continue monitoring the person until emergency responders arrive.
-- Seek professional medical evaluation, even if the injury seems minor, to rule out internal damage.
-        """,
-        "image": "images/head_injury.jpg"
-    },
-    "allergic reaction": {
-        "description": """
-*Recognizing an Allergic Reaction:*
-- *Mild Symptoms:*
-  - Itchy skin, rash, or hives.
-  - Sneezing, runny nose, or itchy eyes.
-
-- *Severe Symptoms (Anaphylaxis):*
-  - Difficulty breathing or swallowing.
-  - Swelling of the face, lips, tongue, or throat.
-  - Rapid or weak pulse.
-  - Dizziness or fainting.
-  - Nausea, vomiting, or diarrhea.
-  - Tightness in the chest or throat.
-
-*What to Do:*
-1. *Assess the Severity of the Reaction:*
-   - Identify if it's a mild allergic reaction or anaphylaxis.
-2. *For Mild Reactions:*
-   - Administer an antihistamine if available and appropriate.
-   - Remove the allergen if possible (e.g., take away peanuts, move away from a bee sting).
-   - Apply soothing lotions or creams for skin rashes.
-3. *For Severe Reactions (Anaphylaxis):*
-   - *Use an EpiPen (if available and trained):*
-     - Inject into the outer thigh, even through clothing.
-   - *Call Emergency Services Immediately:*
-     - Inform them of the anaphylactic reaction and any administered medications.
-   - *Begin CPR if the Person Becomes Unconscious and is Not Breathing:*
-     - Follow standard CPR procedures.
-4. *Keep the Person Calm and Still:*
-   - Reduce movement to prevent worsening of symptoms.
-5. *Monitor Vital Signs:*
-   - Keep track of breathing, pulse, and consciousness level.
-6. *Avoid Giving Food or Drink:*
-   - Prevent choking, especially if the person is having difficulty swallowing.
-
-*Aftercare:*
-- Stay with the person until medical help arrives.
-- If an EpiPen was used, follow up with additional doses if symptoms persist and until emergency responders take over.
-        """,
-        "image": "images/allergic_reaction.jpg"
-    },
+    
+    
     "poisoning": {
         "description": """
 *Recognizing Poisoning:*
@@ -331,7 +259,7 @@ medical_emergency_data = {
 - Continue to monitor the person’s condition until medical help arrives.
 - If instructed by poison control or medical professionals, follow their guidance for further actions.
         """,
-        "image": "images/poisoning.jpg"
+        "image": "https://image.slidesharecdn.com/awarenessprogrameng2-160830064800/85/FIRST-AID-MEASURES-IN-POISONING-5-320.jpg"
     },
     # Add more medical emergencies as needed
 }
@@ -347,7 +275,7 @@ non_medical_emergency_data = {
 3. Hold on to your shelter or position until the shaking stops.
 4. Stay away from windows, outside walls, and doorways.
 5. If outdoors, move to an open area, avoiding buildings, trees, streetlights, and utility wires.""",
-        "image": "https://www.shutterstock.com/image-vector/earthquake-safety-rules-instruction-vector-260nw-2348736933.jpg"  # Replace with actual URL
+        "image": "https://www.earthquakecountry.org/library/EarthquakeProtectiveActionAccessibilityPostcard-EN.png"  # Replace with actual URL
     },
     "tsunami": {
         "description": """Steps to follow during a tsunami:
@@ -357,7 +285,7 @@ non_medical_emergency_data = {
 4. Listen to emergency broadcasts for updates and instructions.
 5. Stay in a safe location until authorities declare it safe to return.
 6. Stay away from the beach, as tsunamis may come in multiple waves.""",
-        "image": "https://example.com/images/tsunami.jpg"  # Replace with actual URL
+        "image": "https://uwiseismic.com/wp-content/uploads/2021/04/19.png"  # Replace with actual URL
     },
 "flood": {
         "description": """Steps to follow during a flood:
@@ -366,7 +294,7 @@ non_medical_emergency_data = {
 3. Disconnect electrical appliances if it’s safe and avoid contact with electrically charged water.
 4. If trapped indoors, move to the highest level but avoid closed attics that could trap you.
 5. Seek access to the roof if evacuation may be necessary for rescue.""",
-        "image": "images/flood.jpg"
+        "image": "https://hsseworld.com/wp-content/uploads/2022/02/Flood-safety-Tips-752x1024.png"
     },
     "fire": {
         "description": """Steps to follow during a fire:
@@ -375,7 +303,7 @@ non_medical_emergency_data = {
 3. Cover your nose and mouth with a cloth, ideally damp, to filter out smoke.
 4. If trapped, go to a window and signal for help with a cloth or flashlight.
 5. Seal doors and air gaps with towels or clothing to keep smoke out until help arrives.""",
-        "image": "images/fire.jpg"
+        "image": "https://www.oneeducation.org.uk/wp-content/uploads/2021/03/Fire-action-signs-768x621.jpg"
     },
     "accident": {
         "description": """Steps to follow during an accident:
@@ -385,10 +313,11 @@ non_medical_emergency_data = {
 4. Apply pressure to bleeding wounds to control bleeding.
 5. Check for consciousness and breathing. If trained, perform CPR if necessary.
 6. Stay with the injured person and keep them calm until help arrives.""",
-        "image": "https://www.shutterstock.com/shutterstock/photos/1234348078/display_1500/stock-vector-what-to-do-after-car-accident-instruction-call-and-wait-for-police-automobile-damage-and-tow-1234348078.jpg"
+        "image": "https://img.freepik.com/free-vector/road-accidents-infographic-set_1284-15383.jpg?w=360"
     },
     # Add more non-medical emergencies here
 }
+
 
 # Function to display emergency instructions and image with TTS
 def display_emergency_info(emergency_type, emergency_data):
@@ -410,15 +339,15 @@ def display_emergency_info(emergency_type, emergency_data):
 def main_menu():
     st.header("Select an Emergency Category:")
     col1, col2 = st.columns(2)
-    
     with col1:
         if st.button("Medical Emergencies"):
             st.session_state.page = "medical"
+            st.rerun()
 
     with col2:
         if st.button("Non-Medical Emergencies"):
             st.session_state.page = "non-medical"
-
+            st.rerun()
 # Medical Emergencies Menu
 def medical_menu():
     st.header("Medical Emergencies")
@@ -427,10 +356,10 @@ def medical_menu():
             st.session_state.selected_emergency = emergency
             st.session_state.page = "emergency_info"
             st.session_state.category = "medical"
-    
+            st.rerun()
     if st.button("Back to Main Menu"):
         st.session_state.page = "main"
-
+        st.rerun()
 # Non-Medical Emergencies Menu
 def non_medical_menu():
     st.header("Non-Medical Emergencies")
@@ -439,9 +368,11 @@ def non_medical_menu():
             st.session_state.selected_emergency = emergency
             st.session_state.page = "emergency_info"
             st.session_state.category = "non-medical"
-    
+            st.rerun()
     if st.button("Back to Main Menu"):
         st.session_state.page = "main"
+        st.rerun()
+
 
 # Embed JavaScript for voice recognition in the browser
 def speech_recognition_ui():
@@ -449,7 +380,7 @@ def speech_recognition_ui():
     <html>
         <body>
             <button onclick="startDictation()">Start Voice Command</button>
-            <input type="text" id="transcript" placeholder="Voice command will appear here" size="50">
+            <input type="text" id="transcript" placeholder="Working on it soonnn..." size="50">
             <script>
                 function startDictation() {
                     if (window.hasOwnProperty('webkitSpeechRecognition')) {
@@ -475,26 +406,10 @@ def speech_recognition_ui():
     </html>
     """, unsafe_allow_html=True)
 
-# Display the voice recognition UI
-st.subheader("Use the button below to start voice recognition:")
-speech_recognition_ui()
 
 # Text input to receive voice recognition results
-voice_command = st.text_input("Recognized Command (say 'heart attack', 'stroke', etc.):")
+voice_command = voice_command = st.text_input("Type Here Looking For:")
 
-# Process voice commands
-if voice_command:
-    st.write(f"Voice Command: {voice_command}")
-    if voice_command.lower() in medical_emergency_data:
-        st.session_state.selected_emergency = voice_command.lower()
-        st.session_state.page = "emergency_info"
-        st.session_state.category = "medical"
-    elif voice_command.lower() in non_medical_emergency_data:
-        st.session_state.selected_emergency = voice_command.lower()
-        st.session_state.page = "emergency_info"
-        st.session_state.category = "non-medical"
-    else:
-        st.write("Sorry, I didn't recognize the emergency. Please try again.")
 
 # Main logic based on session state
 if 'page' not in st.session_state:
@@ -504,6 +419,9 @@ if 'selected_emergency' not in st.session_state:
 if 'category' not in st.session_state:
     st.session_state.category = None
 
+# Display the voice recognition UI
+st.text("Working on it soon in new update:")
+speech_recognition_ui()
 # Page control
 if st.session_state.page == "main":
     main_menu()
@@ -516,6 +434,150 @@ elif st.session_state.page == "emergency_info":
         display_emergency_info(st.session_state.selected_emergency, medical_emergency_data[st.session_state.selected_emergency])
     elif st.session_state.category == "non-medical":
         display_emergency_info(st.session_state.selected_emergency, non_medical_emergency_data[st.session_state.selected_emergency])
-    
     if st.button("Back"):
         st.session_state.page = f"{st.session_state.category}"
+        st.rerun()
+# JSON data containing emergency numbers
+data = [
+    {"Country": "USA", "Police Number": "911", "Fire Number": "911", "Ambulance Number": "911"},
+    {"Country": "UK", "Police Number": "999", "Fire Number": "999", "Ambulance Number": "999"},
+    {"Country": "Canada", "Police Number": "911", "Fire Number": "911", "Ambulance Number": "911"},
+    {"Country": "India", "Police Number": "100", "Fire Number": "101", "Ambulance Number": "102"},
+    {"Country": "Pakistan", "Police Number": "15", "Fire Number": "16", "Ambulance Number": "115"},
+    {"Country": "Australia", "Police Number": "000", "Fire Number": "000", "Ambulance Number": "000"},
+    {"Country": "Germany", "Police Number": "110", "Fire Number": "112", "Ambulance Number": "112"},
+    {"Country": "France", "Police Number": "17", "Fire Number": "18", "Ambulance Number": "15"},
+    {"Country": "Italy", "Police Number": "112", "Fire Number": "115", "Ambulance Number": "118"},
+    {"Country": "Spain", "Police Number": "112", "Fire Number": "112", "Ambulance Number": "112"},
+    {"Country": "South Africa", "Police Number": "10111", "Fire Number": "10177", "Ambulance Number": "10177"},
+    {"Country": "Brazil", "Police Number": "190", "Fire Number": "193", "Ambulance Number": "192"},
+    {"Country": "Mexico", "Police Number": "911", "Fire Number": "911", "Ambulance Number": "911"},
+    {"Country": "Russia", "Police Number": "102", "Fire Number": "101", "Ambulance Number": "103"},
+    {"Country": "China", "Police Number": "110", "Fire Number": "119", "Ambulance Number": "120"},
+    {"Country": "Japan", "Police Number": "110", "Fire Number": "119", "Ambulance Number": "119"},
+    {"Country": "South Korea", "Police Number": "112", "Fire Number": "119", "Ambulance Number": "119"},
+    {"Country": "New Zealand", "Police Number": "111", "Fire Number": "111", "Ambulance Number": "111"},
+    {"Country": "Egypt", "Police Number": "122", "Fire Number": "180", "Ambulance Number": "123"},
+    {"Country": "Saudi Arabia", "Police Number": "999", "Fire Number": "998", "Ambulance Number": "997"},
+    {"Country": "United Arab Emirates", "Police Number": "999", "Fire Number": "997", "Ambulance Number": "998"},
+    {"Country": "Argentina", "Police Number": "101", "Fire Number": "100", "Ambulance Number": "107"},
+    {"Country": "Chile", "Police Number": "133", "Fire Number": "132", "Ambulance Number": "131"},
+    {"Country": "Turkey", "Police Number": "155", "Fire Number": "110", "Ambulance Number": "112"},
+    {"Country": "Indonesia", "Police Number": "110", "Fire Number": "113", "Ambulance Number": "118"},
+    {"Country": "Thailand", "Police Number": "191", "Fire Number": "199", "Ambulance Number": "1669"},
+    {"Country": "Vietnam", "Police Number": "113", "Fire Number": "114", "Ambulance Number": "115"},
+    {"Country": "Colombia", "Police Number": "123", "Fire Number": "123", "Ambulance Number": "123"},
+    {"Country": "Nigeria", "Police Number": "112", "Fire Number": "112", "Ambulance Number": "112"},
+    {"Country": "Bangladesh", "Police Number": "999", "Fire Number": "199", "Ambulance Number": "199"},
+    {"Country": "Ukraine", "Police Number": "102", "Fire Number": "101", "Ambulance Number": "103"},
+    {"Country": "Poland", "Police Number": "997", "Fire Number": "998", "Ambulance Number": "999"},
+    {"Country": "Romania", "Police Number": "112", "Fire Number": "112", "Ambulance Number": "112"},
+    {"Country": "Belgium", "Police Number": "101", "Fire Number": "100", "Ambulance Number": "100"},
+    {"Country": "Portugal", "Police Number": "112", "Fire Number": "112", "Ambulance Number": "112"},
+    {"Country": "Netherlands", "Police Number": "112", "Fire Number": "112", "Ambulance Number": "112"},
+    {"Country": "Czech Republic", "Police Number": "112", "Fire Number": "112", "Ambulance Number": "112"},
+    {"Country": "Greece", "Police Number": "100", "Fire Number": "199", "Ambulance Number": "166"},
+    {"Country": "Switzerland", "Police Number": "117", "Fire Number": "118", "Ambulance Number": "144"},
+    {"Country": "Norway", "Police Number": "112", "Fire Number": "110", "Ambulance Number": "113"},
+    {"Country": "Sweden", "Police Number": "112", "Fire Number": "112", "Ambulance Number": "112"},
+    {"Country": "Finland", "Police Number": "112", "Fire Number": "112", "Ambulance Number": "112"},
+    {"Country": "Denmark", "Police Number": "112", "Fire Number": "112", "Ambulance Number": "112"},
+    {"Country": "Ireland", "Police Number": "112", "Fire Number": "112", "Ambulance Number": "112"},
+    {"Country": "Hungary", "Police Number": "112", "Fire Number": "112", "Ambulance Number": "112"},
+    {"Country": "Slovakia", "Police Number": "112", "Fire Number": "112", "Ambulance Number": "112"},
+    {"Country": "Bulgaria", "Police Number": "112", "Fire Number": "112", "Ambulance Number": "112"},
+    {"Country": "Croatia", "Police Number": "112", "Fire Number": "112", "Ambulance Number": "112"},
+    {"Country": "Serbia", "Police Number": "112", "Fire Number": "112", "Ambulance Number": "112"},
+    {"Country": "Bosnia and Herzegovina", "Police Number": "122", "Fire Number": "123", "Ambulance Number": "124"},
+    {"Country": "Montenegro", "Police Number": "112", "Fire Number": "112", "Ambulance Number": "112"},
+    {"Country": "Kosovo", "Police Number": "112", "Fire Number": "112", "Ambulance Number": "112"},
+    {"Country": "Albania", "Police Number": "129", "Fire Number": "128", "Ambulance Number": "127"},
+    {"Country": "Macedonia", "Police Number": "192", "Fire Number": "193", "Ambulance Number": "194"},
+    {"Country": "Malta", "Police Number": "112", "Fire Number": "112", "Ambulance Number": "112"},
+    {"Country": "Luxembourg", "Police Number": "113", "Fire Number": "112", "Ambulance Number": "112"},
+    {"Country": "Monaco", "Police Number": "17", "Fire Number": "18", "Ambulance Number": "18"},
+    {"Country": "Liechtenstein", "Police Number": "112", "Fire Number": "112", "Ambulance Number": "112"},
+    {"Country": "San Marino", "Police Number": "112", "Fire Number": "115", "Ambulance Number": "118"},
+    {"Country": "Andorra", "Police Number": "112", "Fire Number": "112", "Ambulance Number": "112"},
+    {"Country": "Armenia", "Police Number": "102", "Fire Number": "101", "Ambulance Number": "103"},
+    {"Country": "Georgia", "Police Number": "112", "Fire Number": "112", "Ambulance Number": "112"},
+    {"Country": "Azerbaijan", "Police Number": "102", "Fire Number": "101", "Ambulance Number": "103"},
+    {"Country": "Kazakhstan", "Police Number": "102", "Fire Number": "101", "Ambulance Number": "103"},
+    {"Country": "Turkmenistan", "Police Number": "102", "Fire Number": "101", "Ambulance Number": "103"},
+    {"Country": "Tajikistan", "Police Number": "102", "Fire Number": "101", "Ambulance Number": "103"},
+]
+
+# Convert data into a dictionary for quick access
+country_data = {entry['Country']: entry for entry in data}
+
+# Create a list of country names for the dropdown
+country_list = [entry['Country'] for entry in data]
+
+# Streamlit function to display emergency numbers based on selected country
+def display_emergency_numbers(country):
+    country = country.strip().title()  # Clean and format the input
+    if country in country_data:
+        numbers = country_data[country]
+        st.write(f"### Emergency Numbers for {numbers['Country']}")
+        st.write(f"**Police Number**: {numbers['Police Number']}")
+        st.write(f"**Fire Number**: {numbers['Fire Number']}")
+        st.write(f"**Ambulance Number**: {numbers['Ambulance Number']}")
+    else:
+        st.write("Sorry, we don't have data for this country.")
+
+# Streamlit interface
+st.subheader("Emergency Numbers by Country")
+st.write(
+    "Select a country from the dropdown to get the emergency numbers (Police, Fire, Ambulance)."
+)
+
+# Add a selectbox for country selection
+country_input = st.selectbox("Choose a Country:", country_list)
+
+# Button to trigger the search
+if st.button("Get Emergency Numbers"):
+    display_emergency_numbers(country_input)
+
+# Optional: Add styling to improve UI
+st.markdown("""
+<style>
+    .css-1v0mbdj {
+        background-color: #f0f8ff;
+    }
+    .css-ffhzg2 {
+        color: #00008b;
+    }
+    .stTextInput input {
+        font-size: 18px;
+    }
+</style>
+""", unsafe_allow_html=True)    
+
+
+# Your main app code goes here
+
+# Add the team name at the bottom left
+st.markdown(
+    """
+    <style>
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: transparent;
+        color: gray;
+        text-align: left;
+        padding: 10px;
+        font-size: medium;
+        font-weight: bold;
+    }
+    </style>
+    <div class="footer">
+        Presented by F&F developers
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+    
